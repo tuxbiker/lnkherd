@@ -1,6 +1,6 @@
 %w(rubygems yajl/json_gem digest/md5 oa-oauth dm-core dm-sqlite-adapter dm-migrations dm-validations sinatra erb).each { |dependency| require dependency }
 
-DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/database.db")
+DataMapper.setup(:default, ENV['DATABASE_URL'] || 'sqlite3://#{Dir.pwd}/database.db')
 
 class User
   include DataMapper::Resource
