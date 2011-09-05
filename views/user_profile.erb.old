@@ -1,0 +1,32 @@
+<div class="editProfile">
+  <form action="/" method="post" name="profile" class="form-stacked">
+    <fieldset>
+      <legend>Edit your profile</legend>
+    <div class="clearfix">
+	<label for="email">email</label>
+	<input id="email" value="<%= @email %>" name="email" type="text">
+</div>
+<div class="row">
+	<label for="url">url</label>
+	<input id="url" value="<%= @url %>" name="url" type="text">
+</div>
+<div class="row">
+	<label for="tag">tag</label>
+	<select id="tag" name="tag">
+		<option <%= @tag == "this" ? "selected" : "" %> value="this">this</option>
+		<option <%= @tag == "that" ? "selected": "" %> value="that">that</option>
+	</select>
+</div>
+<div class="row">
+        <label for="show">show</label>
+        <select id="show" name="show">
+                <option <%= @show ? "selected" : "" %> value="true">Yup</option>
+                <option <%= !@show ? "selected" : "" %> value="false">Nope</option>
+        </select>
+</div>
+<div class="row">
+<input type="hidden" value="<%= @csrf %>" name="csrf">
+<input type="submit" value="Save">
+</div>
+</form>
+</div>

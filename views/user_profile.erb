@@ -1,0 +1,46 @@
+<div class="row">
+<div class="span4 offset3">
+  some content
+</div>
+<div class="span6">
+  <form action="/" method="post" name="profile" class="form-stacked">
+    <fieldset>
+      <legend>Edit your profile</legend>
+      <div class="clearfix">
+        <label for="email">Email</label>
+        <div class="input">
+          <input id="email" value="<%= @email %>" name="email" type="text">
+        </div>
+      </div>
+      <div class="clearfix">
+        <label for="url">Website</label>
+        <div class="input">
+          <input id="url" value="<%= @url %>" name="url" type="text">
+        </div>
+      </div>
+      <div class="clearfix"> 
+        <label for="tag">Which one of these fits you best?</label>
+        <div class="input"> 
+          <select id="tag" name="tag">
+            <option <%= @tag == "this" ? "selected" : "" %> value="this">this</option>
+            <option <%= @tag == "that" ? "selected": "" %> value="that">that</option>
+          </select>
+        </div> 
+      </div><!-- /clearfix -->
+      <div class="clearfix"> 
+        <label for="show">Make my profile public?</label>
+        <div class="input"> 
+          <select id="show" name="show">
+            <option <%= @show ? "selected" : "" %> value="true">Yes</option>
+            <option <%= !@show ? "selected" : "" %> value="false">No</option>
+          </select>
+        </div> 
+      </div><!-- /clearfix --> 
+      <input type="hidden" value="<%= @csrf %>" name="csrf">
+      <div class="actions"> 
+        <button type="submit" class="btn success">Save Changes</button>&nbsp;<a href="/" type="reset" class="btn">Cancel</a>
+      </div>
+    </fieldset>
+  </form>
+</div>
+</div>

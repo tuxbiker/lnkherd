@@ -1,0 +1,11 @@
+<div class="row">
+<div id="people-container" class="span16">
+<% @users.each do |user|%>
+        <div class="person">
+          <a href="<%= (user.url.length > 2) ? user.url : '/' %>">
+            <img src="<%= profile_pic(user.email || "",'168') %>" alt="profile picture" title="<%= user.name %>"></img>
+          </a>
+        </div>
+<% end %>
+      </div>
+    </div>
