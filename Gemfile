@@ -7,3 +7,6 @@ gem "dm-postgres-adapter"
 gem "dm-migrations"
 gem "dm-validations"
 gem "sinatra"
+group :development do
+  gem "heroku"
+end
